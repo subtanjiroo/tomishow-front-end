@@ -10,22 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const HomeData = await response.json();
             // Render data from API
             const card_logo_left = document.querySelector('.card_logo_left');
-            if (card_logo_left && HomeData.left_icon) {
-                let asciiString = HomeData.left_icon; // Giải mã base64 sang ASCII
-                card_logo_left.src = `${asciiString}`; // Gán vào thẻ <img>
+            if (card_logo_left) {
+                card_logo_left.src = HomeData.left_icon; // Gán vào thẻ <img>
 
             }
 
             const card_logo_mid = document.querySelector('.card_logo_mid');
-            if (card_logo_mid && HomeData.mid_icon) {
-                let asciiString = HomeData.mid_icon;
-                card_logo_mid.src = `${asciiString}`;
+            if (card_logo_mid) {
+                card_logo_mid.src = HomeData.mid_icon;
             }
 
             const card_logo_right = document.querySelector('.card_logo_right');
-            if (card_logo_right && HomeData.right_icon) {
-                let asciiString = HomeData.right_icon;
-                card_logo_right.src = `${asciiString}`;
+            if (card_logo_right) {
+                card_logo_right.src = HomeData.right_icon;
             }
 
             const main_title = document.querySelector('.main_title_div1');
