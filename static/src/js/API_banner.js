@@ -7,15 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (loadingOverlay) {
                 loadingOverlay.classList.remove('hidden');
             }
-            function decodeBase64ToAscii(base64String) {
-                // Giải mã base64 thành ASCII
-                let binaryString = atob(base64String);
-                let asciiString = '';
-                for (let i = 0; i < binaryString.length; i++) {
-                    asciiString += String.fromCharCode(binaryString.charCodeAt(i));
-                }
-                return asciiString;
-            }
+
             const response = await fetch('/get_header', {
                 method: 'GET',
                 headers: {
@@ -26,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Render data từ API
             const bannerDiv = document.querySelector('.banner');
             if (bannerDiv) {
-                bannerDiv.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(HomeData.back_ground)`;
+                bannerDiv.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(${HomeData.back_ground})`;
             }
             const logoBanner = document.querySelector('.logo_banner');
             if (logoBanner) {
