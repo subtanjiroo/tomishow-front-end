@@ -19,7 +19,7 @@
     right: 0;
     width: 40%;
 }
-@media(max-width: 350px){
+@media(max-width: 500px){
     .side-menu.open {
     right: 0;
     width: 100%;
